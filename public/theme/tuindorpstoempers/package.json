@@ -1,0 +1,25 @@
+{
+  "name": "tuindorpstoempers.nl",
+  "description": "",
+  "scripts": {
+    "build:css": "sass --load-path node_modules/ src/styles/style.scss dist/styles/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wouterbles/tuindorpstoempers.nl.git"
+  },
+  "author": "Wouter Bles <whbles@gmail.com> (https://wouterbles.nl)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wouterbles/tuindorpstoempers.nl/issues"
+  },
+  "homepage": "https://github.com/wouterbles/tuindorpstoempers.nl#readme",
+  "devDependencies": {
+    "clean-css-cli": "^4.3.0",
+    "sass": "^1.18.0"
+  },
+  "dependencies": {
+    "bourbon": "^5.1.0",
+    "bourbon-neat": "^3.0.1"
+  }
+}

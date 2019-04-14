@@ -1,8 +1,30 @@
-# Dependency directories
-/node_modules
+# PHP files and folders
 /vendor
 
-#Build directory
-/dist
+# Common developer tools
+composer.phar
+php-cs-fixer.phar
+scrutinizer.phar
 
-.env
+# NPM, Gulp and Grunt stuff
+.sass-cache
+bower_components
+node_modules
+npm-debug.log
+
+# File-system cruft and temporary files
+*.gz
+*.sublime-*
+*.zip
+.*.swp
+._*
+.buildpath
+.DS_Store
+.idea
+.project
+.swp
+.Trashes
+.vagrant*
+__*
+Thumbs.db
+Vagrantfile
