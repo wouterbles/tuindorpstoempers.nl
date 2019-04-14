@@ -1,0 +1,112 @@
+body {
+  @include font-feature-settings("kern", "liga", "pnum");
+  -webkit-font-smoothing: antialiased;
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font-family;
+  line-height: $heading-line-height;
+  margin: 0 0 $small-spacing;
+}
+
+p {
+  line-height: 1.6em;
+  letter-spacing: 1;
+  margin: 0 0 $small-spacing;
+}
+
+a {
+  text-decoration: none;
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+hr {
+  border-bottom: $base-border;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  margin: $base-spacing 0;
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 2em;
+  margin-bottom: 0.6em;
+  @include media($small-screen) {
+    font-size: 2.2em;
+  }
+  @include media($medium-screen) {
+    font-size: 2.5em;
+  }
+}
+
+h2 {
+  font-size: 1.6em;
+  font-weight: 400;
+  line-height: 1.25em;
+  margin-bottom: 1em;
+  @include media($medium-screen) {
+    font-size: 1.8em;
+  }
+}
+
+h3 {
+  font-size: 1.2em;
+  font-weight: 400;
+  line-height: 1.25em;
+  margin-bottom: 0.8em;
+  @include media($medium-screen) {
+    font-size: 1.4em;
+  }
+}
+
+h4 {
+  font-weight: 600;
+  font-family: $base-font-family;
+  text-transform: uppercase;
+}
+
+blockquote {
+  border-radius: $base-border-radius;
+  font-style: italic;
+  color: $gray;
+  margin-left: 1em;
+  margin-right: 0.5em;
+  padding: 2em 2em 0.5em 3em;
+  border-left: 6px solid $red;
+  line-height: 1.5;
+  position: relative;
+  background: #f5f5f5;
+  margin-bottom: 2em;
+  @include media($large-screen) {
+    margin-left: 2.5em;
+    margin-right: 2.5em;
+  }
+  &:before {
+    font-family: Arial;
+    content: "\201C";
+    color: $red;
+    font-size: 4em;
+    position: absolute;
+    left: 10px;
+    top: -10px;
+  }
+}

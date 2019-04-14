@@ -1,0 +1,25 @@
+input,
+textarea {
+  width: 100%;
+  display: block;
+  padding: 2.5em 1em 1em;
+  border-radius: $base-border-radius;
+  border: 2px solid $light-gray;
+  margin-bottom: 1em;
+  &:focus {
+    outline: 0;
+    border: 2px solid $medium-gray;
+  }
+}
+
+textarea {
+  min-height: 250px;
+  resize: vertical;
+}
+
+label {
+  font-size: 0.9em;
+  position: absolute;
+  top: 1em;
+  left: 1.3em;
+}
