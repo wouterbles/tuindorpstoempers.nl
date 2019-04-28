@@ -10,15 +10,14 @@ database:
     databasename: bolt
 
 # The name of the website
-sitename: A sample site
-payoff: The amazing payoff goes here
+sitename: Tuindorp Stoempers
 
 # The theme to use.
 #
 # Don't edit the provided templates directly, because they _will_ get updated
 # in next releases. If you wish to modify a default theme, copy its folder, and
 # change the name here accordingly.
-theme: base-2018
+theme: tuindorpstoempers
 
 # The locale that'll be used by the application. If no locale is set the
 # fallback locale is 'en_GB'. For available options, see:
@@ -29,7 +28,7 @@ theme: base-2018
 #
 # This can be done as [nl_NL, Dutch_Netherlands] when specifying multiple
 # locales, ensure the first is a standard locale.
-locale: en_GB
+locale: nl_NL
 
 # Set the timezone to be used on the website. For a list of valid timezone
 # settings, see: http://php.net/manual/en/timezones.php
@@ -69,7 +68,7 @@ cron_hour: 3
 
 # Note: The location given is relative to the currently selected theme. If
 #       you want to set the icon yourself, just don't enable the following line.
-#favicon: images/favicon-bolt.ico
+favicon: favicon.ico
 
 # The default content to use for the homepage, and the template to render it
 # with. This can either be a specific record (like `page/1`) or a listing of
@@ -79,7 +78,7 @@ cron_hour: 3
 # Note: If you've changed the filename, and your changes do not show up on
 #       the website, be sure to check for a theme.yml file in your theme's
 #       folder. If a template is set there, it will override the setting here.
-homepage: homepage/1
+homepage: page/1
 homepage_template: index.twig
 
 # The default content for the 404 page. Can be an (array of) template names or
@@ -112,8 +111,8 @@ record_template: record.twig
 # Note 2: If you've changed the filename, and your changes do not show up on the
 #         website, be sure to check for a config.yml file in your theme's
 #         folder. If a template is set there, it will override the setting here.
-listing_template: listing.twig
-listing_records: 6
+listing_template: news.twig
+listing_records: 10
 listing_sort: datepublish DESC
 
 # Because of limitations on how the underlying database queries work, there are
@@ -127,7 +126,7 @@ taxonomy_sort: DESC
 # Note: If you've changed the filename, and your changes do not show up on the
 #       website, be sure to check for a config.yml file in your theme's folder.
 #       If a template is set there, it will override the setting here.
-search_results_template: search.twig
+search_results_template: listing.twig
 search_results_records: 10
 
 # Add jQuery to the rendered HTML, whether or not it's added by an extension.
@@ -198,12 +197,12 @@ changelog:
 thumbnails:
     default_thumbnail: [ 160, 120 ]
     default_image: [ 1000, 750 ]
-    quality: 80
+    quality: 60
     cropping: crop
     notfound_image: bolt_assets://img/default_notfound.png
     error_image: bolt_assets://img/default_error.png
-    save_files: false
-    allow_upscale: false
+    save_files: true
+    allow_upscale: true
     exif_orientation: true
     only_aliases: false
 #    browser_cache_time: 2592000
@@ -216,8 +215,8 @@ thumbnails:
 # the allowed tags. For example, if you set `images: true`, the `<img>` tag
 # will be allowed, regardless of it being in the `allowed_tags` setting.
 htmlcleaner:
-    allowed_tags: [ div, span, p, br, hr, s, u, strong, em, i, b, li, ul, ol, mark, blockquote, pre, code, tt, h1, h2, h3, h4, h5, h6, dd, dl, dt, table, tbody, thead, tfoot, th, td, tr, a, img, address, abbr, iframe, caption, sub, sup, figure, figcaption ]
-    allowed_attributes: [ id, class, style, name, value, href, src, alt, title, width, height, frameborder, allowfullscreen, scrolling, target, colspan, rowspan ]
+    allowed_tags: [ div, p, br, hr, s, u, strong, em, i, b, li, ul, ol, blockquote, pre, code, tt, h1, h2, h3, h4, h5, h6, dd, dl, dh, table, tbody, thead, tfoot, th, td, tr, a, img ]
+    allowed_attributes: [ id, class, style, name, value, href, src ]
 
 # Uploaded file handling
 #
@@ -237,7 +236,7 @@ htmlcleaner:
 # in either 'file' fields or through the 'files' screen. Note that certain file-
 # types are never acceptable, even if they are in this list. These types are
 # never allowed: sh, asp, cgi, php, php3, ph3, php4, ph4, php5, ph5, phtm, phtml
-accept_file_types: [ twig, html, js, css, scss, gif, jpg, jpeg, png, ico, zip, tgz, txt, md, doc, docx, pdf, epub, xls, xlsx, ppt, pptx, mp3, ogg, wav, m4a, mp4, m4v, ogv, wmv, avi, webm, svg]
+accept_file_types: [ twig, html, js, css, scss, gif, jpg, jpeg, png, ico, zip, tgz, txt, md, doc, docx, pdf, epub, xls, xlsx, ppt, pptx, mp3, ogg, wav, m4a, mp4, m4v, ogv, wmv, avi, webm, svg, php]
 
 # Alternatively, if you wish to limit these, uncomment the following list
 # instead. It just includes file types / extensions that are harder to exploit.
@@ -266,7 +265,7 @@ accept_file_types: [ twig, html, js, css, scss, gif, jpg, jpeg, png, ico, zip, t
 # the debugbar is only shown to logged-in users. Use the 'debug_show_loggedoff'
 # option to show it to all users. You probably do not want to use this in a
 # production environment.
-debug: true
+debug: false
 debug_show_loggedoff: false
 debug_permission_audit_mode: false
 # debug_error_level: 8181           # equivalent to E_ALL &~ E_NOTICE &~ E_DEPRECATED &~ E_USER_DEPRECATED &~ E_WARNING
@@ -301,7 +300,7 @@ debuglog:
 # enable them for your editors, please instruct them thoroughly on their
 # responsibility not to break the layout.
 wysiwyg:
-    images: false            # Allow users to insert images in the content.
+    images: true             # Allow users to insert images in the content.
     styles: false            # Allow users to use the custom styles you have defined (you need to set the "stylesSet" param in the ck section bellow)
     anchor: false            # Adds a button to create internal anchors to link to.
     tables: false            # Adds a button to insert and modify tables in the content.
@@ -312,7 +311,7 @@ wysiwyg:
     underline: false         # Adds a button to underline text, using the `<u>`-tag.
     ruler: false             # Adds a button to add a horizontal ruler, using the `<hr>`-tag.
     strike: false            # Adds a button to add stikethrough, using the `<s>`-tag.
-    blockquote: false        # Allows the user to insert blockquotes using the `<blockquote>`-tag.
+    blockquote: true         # Allows the user to insert blockquotes using the `<blockquote>`-tag.
     codesnippet: false       # Allows the user to insert code snippets using `<pre><code>`-tags.
     specialchar: false       # Adds a button to insert special chars like '€' or '™'.
     clipboard: false         # Adds buttons to 'undo' and 'redo'.

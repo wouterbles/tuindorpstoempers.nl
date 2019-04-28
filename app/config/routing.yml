@@ -1,11 +1,17 @@
 # This file defines user-definable routes for the frontend of your Bolt website.
 # Check below for examples, or read the documentation at
-# https://docs.bolt.cm/configuration/routing
+# http://docs.bolt.cm/templates-routes#routing
 
 # ------------------------------------------------------------------------------
 # Place your own routes here, that have a HIGHER priority than the default routes.
 
+sitemapxml:
+  path: /sitemap.xml
+  defaults: { _controller: 'Bolt\Extension\Bolt\Sitemap\Extension::sitemapXml' }
 
+sitemap:
+  path: /sitemap
+  defaults: { _controller: 'Bolt\Extension\Bolt\Sitemap\Extension::sitemap' }
 
 # ------------------------------------------------------------------------------
 # These are the routes defining the default behaviour of Bolt's frontend.
@@ -17,18 +23,12 @@ homepage:
     defaults:
         _controller: controller.frontend:homepage
 
-search:
-    path: /search
-    defaults:
-        _controller: controller.frontend:search
-
 preview:
     path: /preview/{contenttypeslug}
     defaults:
         _controller: controller.frontend:preview
     requirements:
         contenttypeslug: controller.requirement:anyContentType
-    methods: [POST]
 
 contentlink:
     path: /{contenttypeslug}/{slug}
@@ -38,7 +38,7 @@ contentlink:
         contenttypeslug: controller.requirement:anyContentType
 
 taxonomylink:
-    path: /{taxonomytype}/{slug}
+    path: nieuws/{taxonomytype}/{slug}
     defaults:
         _controller: controller.frontend:taxonomy
     requirements:
@@ -67,7 +67,7 @@ contentlisting:
 #         _controller: controller.frontend:record
 #         contenttypeslug: page
 #     requirements:
-#         slug: '[a-z0-9-_]+'
+#         slug: [a-z0-9-_]+
 
 
 # Example route with a host requirement
@@ -83,13 +83,12 @@ contentlisting:
 
 # Example override for a specific contenttype
 
-# pagebinding:
-#     path: /{slug}
-#     defaults:
-#         _controller: controller.frontend:record
-#         contenttypeslug: page
-#     contenttype: pages
-
+pagebinding:
+     path: /{slug}
+     defaults:
+         _controller: controller.frontend:record
+         contenttypeslug: pagina
+     contenttype: paginas
 
 
 # Example single record override
@@ -101,6 +100,34 @@ contentlisting:
 #         contenttypeslug: page
 #         slug: about
 #     recordslug: page/about
+
+
+
+# Example: Use the following to add a route for contenttypes in your URL scheme. In this example we
+# add routing for the 'chapter' taxonomy, so we can link to /meta/lorum-ipsum or /main/foo-bar.
+# note that the 'showcase' in the defaults and requirements determine the fallback, for when
+# no option is specified in a specifid record. Basically, this makes the route respond to the
+# default route /showcase/foo-bar as well.
+
+# chapterbinding:
+#     path: /{chapters}/{slug}
+#     defaults:
+#         _controller: controller.frontend:record
+#         contenttypeslug: showcases
+#         chapters: showcase
+#     requirements:
+#         chapters: [ controller.requirement:singleTaxonomy, [chapters, showcase] ]
+#     contenttype: showcases
+
+# categorybinding:
+#     path: /{categories}/{slug}
+#     defaults:
+#         _controller: controller.frontend:record
+#         contenttypeslug: showcases
+#         categories: none
+#     requirements:
+#         categories: [ controller.requirement:singleTaxonomy, [categories] ]
+#     contenttype: showcases
 
 
 # Supported internal defaults are:
