@@ -1,60 +1,56 @@
-{% include '_header.twig' %}
+{% include '_header.twig' with {'bodyclass': ''} %}
 <svg display="none" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <defs>
-    <symbol id="icon-check" viewBox="0 0 1024 1024">
-      <title>check</title>
-      <path
-        class="path1"
-        d="M424.653 870.298c-22.272 0-43.366-10.394-56.883-28.314l-182.938-241.715c-23.808-31.386-17.613-76.083 13.824-99.891 31.488-23.91 76.186-17.613 99.994 13.824l120.371 158.925 302.643-485.99c20.838-33.382 64.87-43.622 98.355-22.784 33.434 20.787 43.725 64.819 22.835 98.304l-357.581 573.952c-12.39 20.019-33.843 32.512-57.344 33.587-1.126 0.102-2.15 0.102-3.277 0.102z"></path>
-    </symbol>
+    <defs>
+        <symbol id="icon-check" viewBox="0 0 1024 1024">
+            <title>check</title>
+            <path class="path1" d="M424.653 870.298c-22.272 0-43.366-10.394-56.883-28.314l-182.938-241.715c-23.808-31.386-17.613-76.083 13.824-99.891 31.488-23.91 76.186-17.613 99.994 13.824l120.371 158.925 302.643-485.99c20.838-33.382 64.87-43.622 98.355-22.784 33.434 20.787 43.725 64.819 22.835 98.304l-357.581 573.952c-12.39 20.019-33.843 32.512-57.344 33.587-1.126 0.102-2.15 0.102-3.277 0.102z"></path>
+        </symbol>
 
-    <symbol id="icon-mail" viewBox="0 0 1024 1024">
-      <title>mail</title>
-      <path
-        class="path1"
-        d="M80.589 270.643c24.986 13.414 371.098 199.373 384 206.285s29.594 10.189 46.387 10.189c16.794 0 33.485-3.277 46.387-10.189s359.014-192.87 384-206.285c25.037-13.466 48.691-65.843 2.765-65.843h-866.253c-45.926 0-22.272 52.378 2.714 65.843zM952.986 383.437c-28.416 14.797-378.214 197.069-395.622 206.182s-29.594 10.189-46.387 10.189-28.979-1.075-46.387-10.189-365.21-191.437-393.626-206.234c-19.968-10.445-19.763 1.792-19.763 11.213s0 373.402 0 373.402c0 21.504 28.979 51.2 51.2 51.2h819.2c22.221 0 51.2-29.696 51.2-51.2 0 0 0-363.93 0-373.35s0.205-21.658-19.814-11.213z"></path>
-    </symbol>
-  </defs>
+        <symbol id="icon-mail" viewBox="0 0 1024 1024">
+            <title>mail</title>
+            <path class="path1" d="M80.589 270.643c24.986 13.414 371.098 199.373 384 206.285s29.594 10.189 46.387 10.189c16.794 0 33.485-3.277 46.387-10.189s359.014-192.87 384-206.285c25.037-13.466 48.691-65.843 2.765-65.843h-866.253c-45.926 0-22.272 52.378 2.714 65.843zM952.986 383.437c-28.416 14.797-378.214 197.069-395.622 206.182s-29.594 10.189-46.387 10.189-28.979-1.075-46.387-10.189-365.21-191.437-393.626-206.234c-19.968-10.445-19.763 1.792-19.763 11.213s0 373.402 0 373.402c0 21.504 28.979 51.2 51.2 51.2h819.2c22.221 0 51.2-29.696 51.2-51.2 0 0 0-363.93 0-373.35s0.205-21.658-19.814-11.213z"></path>
+        </symbol>
+    </defs>
 </svg>
 
 <div class="header-image" style="background-image: url({{ pagina.image|image }})"></div>
 
 <div class="page-wrapper">
-  <section class="card-section contact-page">
-    <h2>{{ pagina.heading }}</h2>
+    <section class="card-section contact-page">
+        <h2>{{ pagina.heading }}</h2>
 
-    <div class="contact-form">
-      <div id="form-messages"></div>
+        <div class="contact-form">
+            <div id="form-messages"></div>
 
-      <form action="/theme/tuindorpstoempers2/process.php" method="post" id="js-contact">
-        <div class="form-input" id="js-name">
-          <label for="name">Naam</label>
-          <input type="text" id="name" name="name" placeholder="Eddy Merckx" required>
+            <form action="/theme/tuindorpstoempers2/process.php" method="post" id="js-contact">
+                <div class="form-input" id="js-name">
+                    <label for="name">Naam</label>
+                    <input type="text" id="name" name="name" placeholder="Eddy Merckx" required>
+                </div>
+
+                <div class="form-input" id="js-email">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="dekanibaal@vlaanderen.be" required>
+                </div>
+
+                <div class="form-input" id="js-message">
+                    <label for="message">Bericht</label>
+                    <textarea id="message" name="message" placeholder="Denkt u dat ik een keertje met u mee mag stoempen...?" required></textarea>
+                </div>
+
+                <button class="button" id="submit" type="submit">
+                    <svg class="icon icon-mail">
+                        <use xlink:href="#icon-mail"></use>
+                    </svg>
+                    Verstuur
+                </button>
+            </form>
         </div>
 
-        <div class="form-input" id="js-email">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="dekanibaal@vlaanderen.be" required>
+        <div class="contact-info">
+            {{ pagina.body }}
         </div>
-
-        <div class="form-input" id="js-message">
-          <label for="message">Bericht</label>
-          <textarea id="message" name="message" placeholder="Denkt u dat ik een keertje met u mee mag stoempen...?" required></textarea>
-        </div>
-
-        <button class="button" id="submit" type="submit">
-          <svg class="icon icon-mail">
-            <use xlink:href="#icon-mail"></use>
-          </svg>
-          Verstuur
-        </button>
-      </form>
-    </div>
-
-    <div class="contact-info">
-      {{ pagina.body }}
-    </div>
-  </section>
+    </section>
 </div>
 
 {% include '_footer.twig' %}

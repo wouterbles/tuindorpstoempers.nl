@@ -2,7 +2,19 @@
   "name": "tuindorpstoempers.nl",
   "description": "",
   "scripts": {
-    "build:css": "sass --load-path node_modules/ src/styles/style.scss dist/styles/style.css"
+    "watch:mkdir": "mkdirp dist/scripts dist/styles dist/images",
+    "watch:img": "copyfiles -f src/images/* dist/images",
+    "watch:js": "copyfiles -f src/scripts/* dist/scripts",
+    "watch:css": "sass --watch --load-path node_modules/ src/styles/style.scss dist/styles/style.css",
+    "build:css": "sass --load-path node_modules/ src/styles/style.scss dist/styles/style.css",
+    "build:cssmin": "cleancss -o dist/styles/style.css dist/styles/style.css",
+    "build:js": "uglifyjs src/scripts/* -o dist/scripts/main.js -c -m",
+    "build:img": "copyfiles src/images/* dist/images",
+    "clean": "del-cli dist",
+    "mkdirp": "mkdirp dist/scripts dist/styles dist/images",
+    "watch": "npm-run-all clean mkdirp --parallel watch:*",
+    "build": "npm-run-all clean mkdirp build:*",
+    "start": "npm run watch"
   },
   "repository": {
     "type": "git",
@@ -16,7 +28,12 @@
   "homepage": "https://github.com/wouterbles/tuindorpstoempers.nl#readme",
   "devDependencies": {
     "clean-css-cli": "^4.3.0",
-    "sass": "^1.18.0"
+    "copyfiles": "^2.1.0",
+    "del-cli": "^1.1.0",
+    "mkdirp": "^0.5.1",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.18.0",
+    "uglify-js": "^3.5.9"
   },
   "dependencies": {
     "bourbon": "^5.1.0",

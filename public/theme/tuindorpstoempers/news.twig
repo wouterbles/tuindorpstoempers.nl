@@ -1,54 +1,47 @@
-{% include '_header.twig' with {'title': 'Nieuws | Tuindorp Stoempers'} %}
+{% include '_header.twig' with {'title': 'Nieuws | Tuindorp Stoempers', 'bodyclass': ''} %}
 
 <svg display="none" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <defs>
-    <symbol id="icon-arrow-left" viewBox="0 0 1024 1024">
-      <title>arrow-left</title>
-      <path
-        class="path1"
-        d="M711.219 891.802c13.722 13.926 13.722 36.301 0 50.125s-35.891 13.875-49.613 0l-400.896-404.89c-13.722-13.824-13.722-36.198 0-50.125l400.896-404.89c13.722-13.824 35.891-13.824 49.613 0 13.722 13.875 13.722 36.301 0 50.125l-365.619 379.853 365.619 379.802z"></path>
-    </symbol>
-    <symbol id="icon-arrow-right" viewBox="0 0 1024 1024">
-      <title>arrow-right</title>
-      <path
-        class="path1"
-        d="M678.4 512l-365.619-379.904c-13.722-13.824-13.722-36.198 0-50.125 13.722-13.824 35.891-13.824 49.613 0l400.896 404.89c13.722 13.875 13.722 36.301 0 50.125l-400.896 404.89c-13.722 13.875-35.891 13.824-49.613 0-13.722-13.773-13.722-36.198 0-50.125l365.619-379.75z"></path>
-    </symbol>
-  </defs>
+    <defs>
+        <symbol id="icon-arrow-left" viewBox="0 0 1024 1024">
+            <title>arrow-left</title>
+            <path class="path1" d="M711.219 891.802c13.722 13.926 13.722 36.301 0 50.125s-35.891 13.875-49.613 0l-400.896-404.89c-13.722-13.824-13.722-36.198 0-50.125l400.896-404.89c13.722-13.824 35.891-13.824 49.613 0 13.722 13.875 13.722 36.301 0 50.125l-365.619 379.853 365.619 379.802z"></path>
+        </symbol>
+        <symbol id="icon-arrow-right" viewBox="0 0 1024 1024">
+            <title>arrow-right</title>
+            <path class="path1" d="M678.4 512l-365.619-379.904c-13.722-13.824-13.722-36.198 0-50.125 13.722-13.824 35.891-13.824 49.613 0l400.896 404.89c13.722 13.875 13.722 36.301 0 50.125l-400.896 404.89c-13.722 13.875-35.891 13.824-49.613 0-13.722-13.773-13.722-36.198 0-50.125l365.619-379.75z"></path>
+        </symbol>
+    </defs>
 </svg>
 
 <div class="header-image" style="background-image: url(/files/paginas/banner6.jpg)"></div>
 <div class="page-wrapper">
-  <div class="news-list">
-    {% if taxonomytype is defined %}
-      <section class="card-section">
-        <a href="/nieuws" class="link album-view-back">&#8592; terug naar nieuws</a>
-        <h2>
+    <div class="news-list">
+        {% if taxonomytype is defined %}
+        <section class="card-section">
+            <a href="/nieuws" class="link album-view-back">&#8592; terug naar nieuws</a>
+            <h2>
           {{ __('Overview for') }}
           {% if taxonomy.options[slug]is defined %}
             {{ taxonomy.options[slug] }}
           {% else %}
             {{ slug }}
           {% endif %}
-        </h2>
-        {% set records = records | order(app.config.get('general/listing_sort')) %}
-      {% endif %}
-    </section>
+        </h2> {% set records = records | order(app.config.get('general/listing_sort')) %} {% endif %}
+        </section>
 
-    {% for record in records %}
-      <div class="card-section news-section">
-        <article class="news-main-item">
-          <p class="date">{{ record.datepublish|localdate("%B %Y")|capitalize }}</p>
-          <a href="{{ record.link }}">
-            <h2>{{ record.title }}</h2>
-          </a>
-          <p>{{ record.excerpt(300) }}</p>
-          <a class="button-small" href="{{ record.link }}">Lees verder</a>
-        </article>
-      </div>
-    {% endfor %}
-    {{ pager('', 8, '_pager.twig') }}
-  </div>
+        {% for record in records %}
+        <div class="card-section news-section">
+            <article class="news-main-item">
+                <p class="date">{{ record.datepublish|localdate("%B %Y")|capitalize }}</p>
+                <a href="{{ record.link }}">
+                    <h2>{{ record.title }}</h2>
+                </a>
+                <p>{{ record.excerpt(300) }}</p>
+                <a class="button-small" href="{{ record.link }}">Lees verder</a>
+            </article>
+        </div>
+        {% endfor %} {{ pager('', 8, '_pager.twig') }}
+    </div>
 
 </div>
 

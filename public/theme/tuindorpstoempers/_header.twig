@@ -1,27 +1,19 @@
 <!doctype html>
-<html class="no-js" lang="nl">
+<html lang="nl">
 
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>
-      {% if record.title is defined %}
-        {{ record.title|striptags }}
-        |
-        {{ app.config.get('general/sitename') }}
-      {% else %}
-        {{ title }}
-      {% endif %}
-    </title>
+    <title>{% if record.title is defined %}{{ record.title|striptags }} | {{ app.config.get('general/sitename') }}{% else %}{{ title }}{% endif %}</title>
     <meta name="description" content="">
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:400italic,600,400' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{{ paths.theme }}/styles/style.min.css">
-  </head>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,600,400' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.css" integrity="sha256-LWdHSKWG7zv3DTpee8YAgoTfkj3gNkfauF624h4P2Nw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/default-skin/default-skin.min.css" integrity="sha256-Q9bBMw/rHRRag46GDWY84J3elDNc8JJjKXL9tIC4oe8=" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ paths.theme }}dist/styles/style.css">
+</head>
 
-  <body class="{{ bodyclass }}">
-    <!--[if lt IE 8]> <p class="browserupgrade">U maakt gebruikt van een <strong>verouderde</strong> browser. <a href="http://browsehappy.com/">Update uw browser</a> om de ervaring te verbeteren.</p> <![endif]-->
-
+<body class="{{ bodyclass }}">
     {{ menu('menu', '_menu.twig') }}

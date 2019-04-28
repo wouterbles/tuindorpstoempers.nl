@@ -1,263 +1,280 @@
-{% include '_header.twig' with {'title': 'Foto\'s | Tuindorp Stoempers'} %}
+{% include '_header.twig' with {'title': 'Foto\'s | Tuindorp Stoempers', 'bodyclass': ''} %}
 
 <div class="header-image" style="background-image: url(/files/paginas/banner6.jpg)"></div>
 
 <div class="page-wrapper">
 
-  {% setcontent fotos = "fotos" where {datepublish: '2016%'} %}
-  <section class="card-section card-albums">
-    <h2>2016</h2>
-    <div class="albums">
-      {% for album in fotos %}
-        <a href="{{ album.link }}" class="album">
-          <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
-          <div class="album-header">
-            <h3>{{ album.title }}</h3>
-            <p>{{ album.albumfotos|length }}
-              foto's</p>
-          </div>
-        </a>
-      {% endfor %}
-    </div>
-  </section>
+    {% setcontent fotos = "fotos" where {datepublish: '2019%'} %}
+    <section class="card-section card-albums">
+        <h2>2019</h2>
+        <div class="albums">
+            {% for album in fotos %}
+            <a href="{{ album.link }}" class="album">
+                <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
+                <div class="album-header">
+                    <h3>{{ album.title }}</h3>
+                    <p>{{ album.albumfotos|length }} foto's
+                    </p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
 
-  {% setcontent fotos = "fotos" where {datepublish: '2015%'} %}
-  <section class="card-section card-albums">
-    <h2>2015</h2>
-    <div class="albums">
-      {% for album in fotos %}
-        <a href="{{ album.link }}" class="album">
-          <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
-          <div class="album-header">
-            <h3>{{ album.title }}</h3>
-            <p>{{ album.albumfotos|length }}
-              foto's</p>
-          </div>
-        </a>
-      {% endfor %}
-    </div>
-  </section>
+    {% setcontent fotos = "fotos" where {datepublish: '2016%'} %}
+    <section class="card-section card-albums">
+        <h2>2016</h2>
+        <div class="albums">
+            {% for album in fotos %}
+            <a href="{{ album.link }}" class="album">
+                <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
+                <div class="album-header">
+                    <h3>{{ album.title }}</h3>
+                    <p>{{ album.albumfotos|length }} foto's
+                    </p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
 
-  {% setcontent fotos = "fotos" where {datepublish: '2014%'} %}
-  <section class="card-section card-albums">
-    <h2>2014</h2>
-    <div class="albums">
-      {% for album in fotos %}
-        <a href="{{ album.link }}" class="album">
-          <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
-          <div class="album-header">
-            <h3>{{ album.title }}</h3>
-            <p>{{ album.albumfotos|length }}
-              foto's</p>
-          </div>
-        </a>
-      {% endfor %}
-    </div>
-  </section>
+    {% setcontent fotos = "fotos" where {datepublish: '2015%'} %}
+    <section class="card-section card-albums">
+        <h2>2015</h2>
+        <div class="albums">
+            {% for album in fotos %}
+            <a href="{{ album.link }}" class="album">
+                <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
+                <div class="album-header">
+                    <h3>{{ album.title }}</h3>
+                    <p>{{ album.albumfotos|length }} foto's
+                    </p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
 
-  {% setcontent fotos = "fotos" where {datepublish: '2013%'} %}
-  <section class="card-section card-albums">
-    <h2>2013</h2>
-    <div class="albums">
-      {% for album in fotos %}
-        <a href="{{ album.link }}" class="album">
-          <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
-          <div class="album-header">
-            <h3>{{ album.title }}</h3>
-            <p>{{ album.albumfotos|length }}
-              foto's</p>
-          </div>
-        </a>
-      {% endfor %}
-    </div>
-  </section>
+    {% setcontent fotos = "fotos" where {datepublish: '2014%'} %}
+    <section class="card-section card-albums">
+        <h2>2014</h2>
+        <div class="albums">
+            {% for album in fotos %}
+            <a href="{{ album.link }}" class="album">
+                <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
+                <div class="album-header">
+                    <h3>{{ album.title }}</h3>
+                    <p>{{ album.albumfotos|length }} foto's
+                    </p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
 
-  {% setcontent fotos = "fotos" where {datepublish: '2012%'} %}
-  <section class="card-section card-albums">
-    <h2>2012</h2>
-    <div class="albums">
-      {% for album in fotos %}
-        <a href="{{ album.link }}" class="album">
-          <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
-          <div class="album-header">
-            <h3>{{ album.title }}</h3>
-            <p>{{ album.albumfotos|length }}
-              foto's</p>
-          </div>
-        </a>
-      {% endfor %}
-    </div>
-  </section>
+    {% setcontent fotos = "fotos" where {datepublish: '2013%'} %}
+    <section class="card-section card-albums">
+        <h2>2013</h2>
+        <div class="albums">
+            {% for album in fotos %}
+            <a href="{{ album.link }}" class="album">
+                <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
+                <div class="album-header">
+                    <h3>{{ album.title }}</h3>
+                    <p>{{ album.albumfotos|length }} foto's
+                    </p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
 
-  {% setcontent fotos = "fotos" where {datepublish: '2011%'} %}
-  <section class="card-section card-albums">
-    <h2>2011</h2>
-    <div class="albums">
-      {% for album in fotos %}
-        <a href="{{ album.link }}" class="album">
-          <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
-          <div class="album-header">
-            <h3>{{ album.title }}</h3>
-            <p>{{ album.albumfotos|length }}
-              foto's</p>
-          </div>
-        </a>
-      {% endfor %}
-    </div>
-  </section>
+    {% setcontent fotos = "fotos" where {datepublish: '2012%'} %}
+    <section class="card-section card-albums">
+        <h2>2012</h2>
+        <div class="albums">
+            {% for album in fotos %}
+            <a href="{{ album.link }}" class="album">
+                <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
+                <div class="album-header">
+                    <h3>{{ album.title }}</h3>
+                    <p>{{ album.albumfotos|length }} foto's
+                    </p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
 
-  {% setcontent fotos = "fotos" where {datepublish: '2010%'} %}
-  <section class="card-section card-albums">
-    <h2>2010</h2>
-    <div class="albums">
-      {% for album in fotos %}
-        <a href="{{ album.link }}" class="album">
-          <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
-          <div class="album-header">
-            <h3>{{ album.title }}</h3>
-            <p>{{ album.albumfotos|length }}
-              foto's</p>
-          </div>
-        </a>
-      {% endfor %}
-    </div>
-  </section>
+    {% setcontent fotos = "fotos" where {datepublish: '2011%'} %}
+    <section class="card-section card-albums">
+        <h2>2011</h2>
+        <div class="albums">
+            {% for album in fotos %}
+            <a href="{{ album.link }}" class="album">
+                <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
+                <div class="album-header">
+                    <h3>{{ album.title }}</h3>
+                    <p>{{ album.albumfotos|length }} foto's
+                    </p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
 
-  {% setcontent fotos = "fotos" where {datepublish: '2008%'} %}
-  <section class="card-section card-albums">
-    <h2>2008</h2>
-    <div class="albums">
-      {% for album in fotos %}
-        <a href="{{ album.link }}" class="album">
-          <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
-          <div class="album-header">
-            <h3>{{ album.title }}</h3>
-            <p>{{ album.albumfotos|length }}
-              foto's</p>
-          </div>
-        </a>
-      {% endfor %}
-    </div>
-  </section>
+    {% setcontent fotos = "fotos" where {datepublish: '2010%'} %}
+    <section class="card-section card-albums">
+        <h2>2010</h2>
+        <div class="albums">
+            {% for album in fotos %}
+            <a href="{{ album.link }}" class="album">
+                <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
+                <div class="album-header">
+                    <h3>{{ album.title }}</h3>
+                    <p>{{ album.albumfotos|length }} foto's
+                    </p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
 
-  {% setcontent fotos = "fotos" where {datepublish: '2007%'} %}
-  <section class="card-section card-albums">
-    <h2>2007</h2>
-    <div class="albums">
-      {% for album in fotos %}
-        <a href="{{ album.link }}" class="album">
-          <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
-          <div class="album-header">
-            <h3>{{ album.title }}</h3>
-            <p>{{ album.albumfotos|length }}
-              foto's</p>
-          </div>
-        </a>
-      {% endfor %}
-    </div>
-  </section>
+    {% setcontent fotos = "fotos" where {datepublish: '2008%'} %}
+    <section class="card-section card-albums">
+        <h2>2008</h2>
+        <div class="albums">
+            {% for album in fotos %}
+            <a href="{{ album.link }}" class="album">
+                <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
+                <div class="album-header">
+                    <h3>{{ album.title }}</h3>
+                    <p>{{ album.albumfotos|length }} foto's
+                    </p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
 
-  {% setcontent fotos = "fotos" where {datepublish: '2006%'} %}
-  <section class="card-section card-albums">
-    <h2>2006</h2>
-    <div class="albums">
-      {% for album in fotos %}
-        <a href="{{ album.link }}" class="album">
-          <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
-          <div class="album-header">
-            <h3>{{ album.title }}</h3>
-            <p>{{ album.albumfotos|length }}
-              foto's</p>
-          </div>
-        </a>
-      {% endfor %}
-    </div>
-  </section>
+    {% setcontent fotos = "fotos" where {datepublish: '2007%'} %}
+    <section class="card-section card-albums">
+        <h2>2007</h2>
+        <div class="albums">
+            {% for album in fotos %}
+            <a href="{{ album.link }}" class="album">
+                <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
+                <div class="album-header">
+                    <h3>{{ album.title }}</h3>
+                    <p>{{ album.albumfotos|length }} foto's
+                    </p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
 
-  {% setcontent fotos = "fotos" where {datepublish: '2005%'} %}
-  <section class="card-section card-albums">
-    <h2>2005</h2>
-    <div class="albums">
-      {% for album in fotos %}
-        <a href="{{ album.link }}" class="album">
-          <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
-          <div class="album-header">
-            <h3>{{ album.title }}</h3>
-            <p>{{ album.albumfotos|length }}
-              foto's</p>
-          </div>
-        </a>
-      {% endfor %}
-    </div>
-  </section>
+    {% setcontent fotos = "fotos" where {datepublish: '2006%'} %}
+    <section class="card-section card-albums">
+        <h2>2006</h2>
+        <div class="albums">
+            {% for album in fotos %}
+            <a href="{{ album.link }}" class="album">
+                <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
+                <div class="album-header">
+                    <h3>{{ album.title }}</h3>
+                    <p>{{ album.albumfotos|length }} foto's
+                    </p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
 
-  {% setcontent fotos = "fotos" where {datepublish: '2004%'} %}
-  <section class="card-section card-albums">
-    <h2>2004</h2>
-    <div class="albums">
-      {% for album in fotos %}
-        <a href="{{ album.link }}" class="album">
-          <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
-          <div class="album-header">
-            <h3>{{ album.title }}</h3>
-            <p>{{ album.albumfotos|length }}
-              foto's</p>
-          </div>
-        </a>
-      {% endfor %}
-    </div>
-  </section>
+    {% setcontent fotos = "fotos" where {datepublish: '2005%'} %}
+    <section class="card-section card-albums">
+        <h2>2005</h2>
+        <div class="albums">
+            {% for album in fotos %}
+            <a href="{{ album.link }}" class="album">
+                <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
+                <div class="album-header">
+                    <h3>{{ album.title }}</h3>
+                    <p>{{ album.albumfotos|length }} foto's
+                    </p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
 
-  {% setcontent fotos = "fotos" where {datepublish: '2002%'} %}
-  <section class="card-section card-albums">
-    <h2>2002</h2>
-    <div class="albums">
-      {% for album in fotos %}
-        <a href="{{ album.link }}" class="album">
-          <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
-          <div class="album-header">
-            <h3>{{ album.title }}</h3>
-            <p>{{ album.albumfotos|length }}
-              foto's</p>
-          </div>
-        </a>
-      {% endfor %}
-    </div>
-  </section>
+    {% setcontent fotos = "fotos" where {datepublish: '2004%'} %}
+    <section class="card-section card-albums">
+        <h2>2004</h2>
+        <div class="albums">
+            {% for album in fotos %}
+            <a href="{{ album.link }}" class="album">
+                <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
+                <div class="album-header">
+                    <h3>{{ album.title }}</h3>
+                    <p>{{ album.albumfotos|length }} foto's
+                    </p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
 
-  {% setcontent fotos = "fotos" where {datepublish: '2001%'} %}
-  <section class="card-section card-albums">
-    <h2>2001</h2>
-    <div class="albums">
-      {% for album in fotos %}
-        <a href="{{ album.link }}" class="album">
-          <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
-          <div class="album-header">
-            <h3>{{ album.title }}</h3>
-            <p>{{ album.albumfotos|length }}
-              foto's</p>
-          </div>
-        </a>
-      {% endfor %}
-    </div>
-  </section>
+    {% setcontent fotos = "fotos" where {datepublish: '2002%'} %}
+    <section class="card-section card-albums">
+        <h2>2002</h2>
+        <div class="albums">
+            {% for album in fotos %}
+            <a href="{{ album.link }}" class="album">
+                <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
+                <div class="album-header">
+                    <h3>{{ album.title }}</h3>
+                    <p>{{ album.albumfotos|length }} foto's
+                    </p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
 
-  {% setcontent fotos = "fotos" where {datepublish: '1999%'} %}
-  <section class="card-section card-albums">
-    <h2>1999</h2>
-    <div class="albums">
-      {% for album in fotos %}
-        <a href="{{ album.link }}" class="album">
-          <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
-          <div class="album-header">
-            <h3>{{ album.title }}</h3>
-            <p>{{ album.albumfotos|length }}
-              foto's</p>
-          </div>
-        </a>
-      {% endfor %}
-    </div>
-  </section>
+    {% setcontent fotos = "fotos" where {datepublish: '2001%'} %}
+    <section class="card-section card-albums">
+        <h2>2001</h2>
+        <div class="albums">
+            {% for album in fotos %}
+            <a href="{{ album.link }}" class="album">
+                <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
+                <div class="album-header">
+                    <h3>{{ album.title }}</h3>
+                    <p>{{ album.albumfotos|length }} foto's
+                    </p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+
+    {% setcontent fotos = "fotos" where {datepublish: '1999%'} %}
+    <section class="card-section card-albums">
+        <h2>1999</h2>
+        <div class="albums">
+            {% for album in fotos %}
+            <a href="{{ album.link }}" class="album">
+                <img class="album-image" src="{{ album.image|thumbnail(400, 250) }}" alt="">
+                <div class="album-header">
+                    <h3>{{ album.title }}</h3>
+                    <p>{{ album.albumfotos|length }} foto's
+                    </p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
 </div>
 
 {% include '_footer.twig' %}
