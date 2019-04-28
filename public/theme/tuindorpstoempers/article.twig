@@ -1,0 +1,40 @@
+{% include '_header.twig' with {'bodyclass': 'nieuws'} %}
+
+<svg display="none" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <symbol id="icon-arrow-left" viewBox="0 0 1024 1024">
+      <title>arrow-left</title>
+      <path
+        class="path1"
+        d="M711.219 891.802c13.722 13.926 13.722 36.301 0 50.125s-35.891 13.875-49.613 0l-400.896-404.89c-13.722-13.824-13.722-36.198 0-50.125l400.896-404.89c13.722-13.824 35.891-13.824 49.613 0 13.722 13.875 13.722 36.301 0 50.125l-365.619 379.853 365.619 379.802z"></path>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="page-wrapper">
+  <section class="card-section card-entry">
+    {% if record.image != "" %}
+      <div class="article-header header-back" style="background-image: url({{ record.image|image }})">
+        <div class="back">
+          <a class="back-link" href="/nieuws">
+            <span>
+              <svg class="icon icon-arrow-left">
+                <use xlink:href="#icon-arrow-left"></use>
+              </svg>
+            </span>terug naar nieuws</a>
+        </div>
+      </div>
+    {% endif %}
+    <article class="article-full">
+      <h1>{{ record.title }}</h1>
+      {{ record.intro }}
+      <p class="date">{{ record.datepublish|localdate("%e")|capitalize }}
+        {{ record.datepublish|localdate("%B %Y")|capitalize }}</p>
+      {{record.body }}
+      <hr>
+      <p class="author">{{ record.auteur }}</p>
+    </article>
+  </section>
+</div>
+
+{% include '_footer.twig' %}

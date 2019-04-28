@@ -1,0 +1,14 @@
+<aside class="year-list">
+  <h4>Categorieën</h4>
+
+  {# set list = taxonomylist('jaar') #}
+  <ul>
+    {% for item in list | reverse %}
+      <li>
+        <a class="{% if item|current %}active{% endif %}" href="/nieuws{{ item.link }}">
+          <span>{{ item.name|slice(2, 2) }}</span>
+          {{ item.name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</aside>

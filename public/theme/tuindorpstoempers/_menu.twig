@@ -1,0 +1,19 @@
+<header class="main-header-wrapper">
+  <div class="main-header">
+    <h1 class="top-heading">Tuindorp Stoempers</h1>
+    <div class="nav-wrapper" id="js-nav-wrapper">
+      <a href="javascript:void(0)" id="js-nav-mobile" class="nav-mobile">Menu<span class="burger-icon"></span>
+      </a>
+      <nav>
+        <ul id="js-nav" class="nav show">
+          {% for item in menu %}
+            {% set counter = counter + 1 %}
+            <li class="nav-item">
+              <a class="{% if item|current %}active{% endif %} {% if counter == 4 %}nav-nieuws{% endif %} {% if counter == 5 %}nav-fotos{% endif %} nav-link" href="{{ item.link }}">{{item.label}}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

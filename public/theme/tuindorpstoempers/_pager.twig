@@ -1,0 +1,44 @@
+{% set link = pager.makelink() %}
+
+{% if pager.totalpages > 1 %}
+  <nav class="pagination">
+    {# 'first' and 'prev' #}
+    {% if pager.current > 1 and class != "narrow" %}
+      <a class="pagination-newer" href="{{link}}{{pager.current-1}}">
+        <span>
+          <svg class="icon icon-arrow-left">
+            <use xlink:href="#icon-arrow-left"></use>
+          </svg>
+        </span>
+        nieuwer</a>
+    {% endif %}
+
+    <span class="pagination-inner">
+      {% if pager.current > surr + 1 %}
+        <a href="{{link}}{{1}}">1</a>
+      {% endif %}
+
+      {% for i in max(1, pager.current - surr)..min(pager.current + surr, pager.totalpages) %}
+        <a href="{{link}}{{i}}" {% if i==pager.current %} class='pagination-active' {%endif%}>{{i}}</a>
+      {% endfor %}
+
+    </span>
+
+    {# 'next' and 'last' #}
+    {% if pager.current < pager.totalpages - surr %}
+      <a href="{{link}}{{pager.totalpages}}">{{pager.totalpages}}</a>
+
+    {% endif %}
+
+    {% if pager.current < pager.totalpages and class != "narrow" %}
+      <a class="link pagination-older" href="{{link}}{{pager.current+1}}">ouder
+        <span>
+          <svg class="icon icon-arrow-right">
+            <use xlink:href="#icon-arrow-right"></use>
+          </svg>
+        </span>
+      </a>
+    {% endif %}
+
+  </nav>
+{% endif %}

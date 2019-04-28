@@ -1,0 +1,81 @@
+{% include '_header.twig' with {'bodyclass': 'fotos'} %}
+
+<svg display="none" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <symbol id="icon-arrow-left" viewBox="0 0 1024 1024">
+      <title>arrow-left</title>
+      <path
+        class="path1"
+        d="M711.219 891.802c13.722 13.926 13.722 36.301 0 50.125s-35.891 13.875-49.613 0l-400.896-404.89c-13.722-13.824-13.722-36.198 0-50.125l400.896-404.89c13.722-13.824 35.891-13.824 49.613 0 13.722 13.875 13.722 36.301 0 50.125l-365.619 379.853 365.619 379.802z"></path>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="page-wrapper">
+  <section class="card-section card-entry">
+    <div class="article-header header-back" style="background-image: url({{ record.albumthumb|image }})">
+      <div class="back">
+        <a class="back-link" href="/fotos">
+          <span>
+            <svg class="icon icon-arrow-left">
+              <use xlink:href="#icon-arrow-left"></use>
+            </svg>
+          </span>terug naar foto's</a>
+      </div>
+    </div>
+    <section class="article-full">
+      <h1>{{ record.title }}</h1>
+
+      <div class="album-list picture" itemscope itemtype="http://schema.org/ImageGallery">
+        {% for image in record.albumfotos %}
+          <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <a class="album-item" href="{{ image.filename|image }}" itemprop="contentUrl" data-size="{{ imageinfo(image.title).width }}x{{ imageinfo(image.title).height }}">
+              <img src="{{ image.filename|thumbnail(300, 250, " c") }}" itemprop="thumbnail">
+            </a>
+          </figure>
+        {% endfor %}
+
+      </div>
+    </section>
+  </section>
+</div>
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="pswp__bg"></div>
+  <div class="pswp__scroll-wrap">
+
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+
+        <div class="pswp__counter"></div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--share" title="Share"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip"></div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include '_footer.twig' %}

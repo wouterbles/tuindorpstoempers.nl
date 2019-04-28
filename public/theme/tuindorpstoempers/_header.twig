@@ -1,0 +1,27 @@
+<!doctype html>
+<html class="no-js" lang="nl">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>
+      {% if record.title is defined %}
+        {{ record.title|striptags }}
+        |
+        {{ app.config.get('general/sitename') }}
+      {% else %}
+        {{ title }}
+      {% endif %}
+    </title>
+    <meta name="description" content="">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400italic,600,400' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ paths.theme }}/styles/style.min.css">
+  </head>
+
+  <body class="{{ bodyclass }}">
+    <!--[if lt IE 8]> <p class="browserupgrade">U maakt gebruikt van een <strong>verouderde</strong> browser. <a href="http://browsehappy.com/">Update uw browser</a> om de ervaring te verbeteren.</p> <![endif]-->
+
+    {{ menu('menu', '_menu.twig') }}
