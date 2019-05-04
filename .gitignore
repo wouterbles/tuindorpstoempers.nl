@@ -28,3 +28,6 @@ npm-debug.log
 __*
 Thumbs.db
 Vagrantfile
+
+# Env files
+*.env
