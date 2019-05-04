@@ -15,20 +15,6 @@
 
 <div class="header-image" style="background-image: url(/files/paginas/banner6.jpg)"></div>
 <div class="page-wrapper">
-    <div class="news-list">
-        {% if taxonomytype is defined %}
-        <section class="card-section">
-            <a href="/nieuws" class="link album-view-back">&#8592; terug naar nieuws</a>
-            <h2>
-          {{ __('Overview for') }}
-          {% if taxonomy.options[slug]is defined %}
-            {{ taxonomy.options[slug] }}
-          {% else %}
-            {{ slug }}
-          {% endif %}
-        </h2> {% set records = records | order(app.config.get('general/listing_sort')) %} {% endif %}
-        </section>
-
         {% for record in records %}
         <div class="card-section news-section">
             <article class="news-main-item">
@@ -41,8 +27,6 @@
             </article>
         </div>
         {% endfor %} {{ pager('', 8, '_pager.twig') }}
-    </div>
-
 </div>
 
 {% include '_footer.twig' %}

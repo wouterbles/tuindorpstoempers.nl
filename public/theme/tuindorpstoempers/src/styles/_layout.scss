@@ -331,57 +331,6 @@ body {
   }
 }
 
-.news-list {
-  @include media($large-screen) {
-    @include span-columns(10);
-  }
-}
-
-.year-list {
-  display: none;
-  @include media($large-screen) {
-    padding-left: 1em;
-    margin-top: 100px;
-    @include span-columns(2);
-  }
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  li {
-    border-bottom: 1px solid #eee;
-    padding: 0;
-  }
-  a {
-    display: inline-block;
-    color: $base-font-color;
-    padding: 0.5em 0;
-    &:hover,
-    &:active {
-      span {
-        background-color: $red;
-        color: #fff;
-      }
-    }
-  }
-  span {
-    margin-right: 0.3em;
-    border: 1px solid $light-gray;
-    font-weight: 600;
-    text-align: center;
-    display: inline-block;
-    padding: 0.4em 0.6em;
-    border-radius: 50%;
-    background-color: #fff;
-    transition: 0.3s;
-  }
-  h4 {
-    display: inline-block;
-    border-bottom: 3px solid $red;
-  }
-}
-
 .history-section {
   padding: 2em;
   @include media($large-screen) {

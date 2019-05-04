@@ -60,7 +60,8 @@
         </div>
     </section>
     
-    {% setcontent records = "nieuws/latest/3" %} {% for record in records %}
+    {% setcontent records = "nieuws/latest/3" %} 
+    {% for record in records %}
     <div class="card-section news-section">
         <article class="news-main-item">
             <p class="date">{{ record.datepublish|localdate("%B %Y")|capitalize }}</p>

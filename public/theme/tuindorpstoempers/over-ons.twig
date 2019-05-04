@@ -19,13 +19,6 @@
                 </ul>
     </section>
 
-    {#
-    <section class="card-section" id="meefietsen">
-        <h2>De wekelijkse routine (zomer-afspraken)</h2>
-        <p>Op de jaarvergadering in maart wordt het zomerprogramma vastgesteld. Zie “kalender”. De vaste afspraken zijn:
-            <p>
-    </section> #}
-
     <section class="block-list" id="meefietsen">
         <div class="card-section block-overons block-first">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="50" version="1.1" viewBox="0 0 100 100">
@@ -61,7 +54,8 @@
         </div>
     </section>
 
-    {% setcontent records = "nieuws" where {title: 'Getraind in tolerantie'} %} {% for record in records %}
+    {% setcontent records = "nieuws" where {title: 'Getraind in tolerantie'} %} 
+    {% for record in records %}
     <div class="card-section news-section">
         <article class="news-main-item">
             <p class="date">{{ record.datepublish|localdate("%B %Y")|capitalize }}</p>
@@ -72,7 +66,8 @@
             <a class="button-small" href="{{ record.link }}">Lees verder</a>
         </article>
     </div>
-    {% endfor %} {% setcontent records = "nieuws" where {title: 'Prototype van een geslaagde sportvereniging in het Ik-tijdperk'} %} {% for record in records %}
+    {% endfor %} {% setcontent records = "nieuws" where {title: 'Prototype van een geslaagde sportvereniging in het Ik-tijdperk'} %}
+    {% for record in records %}
     <div class="card-section news-section">
         <article class="news-main-item">
             <p class="date">{{ record.datepublish|localdate("%B %Y")|capitalize }}</p>
