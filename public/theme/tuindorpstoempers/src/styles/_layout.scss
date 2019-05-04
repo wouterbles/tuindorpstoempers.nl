@@ -184,7 +184,6 @@
 }
 
 .block-list {
-  margin-bottom: 2em;
   @include row;
 }
 
@@ -274,12 +273,6 @@
   }
 }
 
-.browserupgrade {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
-}
 ::selection {
   background: #b3d4fc;
   text-shadow: none;
@@ -415,9 +408,11 @@ p.date {
   margin-bottom: 0.3em;
   color: transparentize($base-font-color, .5);
 }
+
 hr {
   width: 3em;
 }
+
 p.author {
   font-size: 1.2em;
   font-style: italic;
@@ -426,66 +421,11 @@ p.author {
 /* ==========================================================================
    #Footer
    ========================================================================== */
-.footer {
-  width: 100%;
-  padding: 2em 1em 3em;
-  background: $action-color;
-  $base-spacing: 1.5em !default;
-  $medium-screen: em(640) !default;
-  $large-screen: em(860) !default;
-  $footer-color: white;
-  $footer-link-color: transparentize($footer-color, .4);
-  .footer-logo {
-    margin-right: 1em;
-    margin-bottom: 1em;
-    @include media($large-screen) {
-      float: left;
-      margin-bottom: 0;
-    }
-  }
-  .footer-logo img {
-    height: 1.6em;
-  }
-  .footer-links {
-    margin-bottom: $base-spacing;
-  }
-  ul {
-    line-height: 1.5em;
-    margin: 0 0 1em;
-    padding: 0;
-    @include media($large-screen) {
-      line-height: 1.8em;
-      float: left;
-      margin-bottom: 0;
-      margin-left: 1em;
-    }
-  }
-  ul li {
-    font-weight: 400;
-    padding-right: 1em;
-    list-style: none;
-    @include media($large-screen) {
-      display: inline;
-      text-align: left;
-    }
-  }
-  ul li a {
-    text-decoration: none;
-    color: $footer-link-color;
-    &:focus,
-    &:hover {
-      color: transparentize($footer-color, 0);
-    }
-  }
-  .footer-secondary-links {
-    @include media($large-screen) {
-      float: right;
-    }
-    li {
-      font-size: 1em;
-      font-weight: 400;
-    }
-  }
+.made-by {
+  text-align: center;
+  margin-bottom: 2em;
+  font-size: 0.95em;
+  color: $base-font-color;
 }
 
 /* ==========================================================================
