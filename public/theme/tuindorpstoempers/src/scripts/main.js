@@ -96,7 +96,7 @@ Ajax Contact Form
     // process the form
     $.ajax({
       type: 'POST',
-      url: '/theme/tuindorpstoempers2/process.php',
+      url: '/theme/tuindorpstoempers/process.php',
       data: formData,
       dataType: 'json',
       encode: true
