@@ -9,7 +9,7 @@
     "build:css": "sass --load-path node_modules/ src/styles/style.scss dist/styles/style.css",
     "build:cssmin": "cleancss -o dist/styles/style.css dist/styles/style.css",
     "build:js": "uglifyjs src/scripts/* -o dist/scripts/main.js -c -m",
-    "watch:img": "copyfiles -f src/images/* dist/images",
+    "build:img": "copyfiles -f src/images/* dist/images",
     "clean": "del-cli dist",
     "mkdirp": "mkdirp dist/scripts dist/styles dist/images",
     "watch": "npm-run-all clean mkdirp --parallel watch:*",
