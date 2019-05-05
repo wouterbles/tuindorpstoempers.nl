@@ -2,9 +2,11 @@
 require '../../../vendor/autoload.php';
 // Configure your Subject Prefix and Recipient here
 $subjectPrefix = '[Contact Stoempers]';
-$emailTo       = 'whbles@gmail.com';
+$emailTos = ['fjjbles@outlook.com', ];
+$emailCc = 'whbles@gmail.com';
+$emailTo = 'fjjbles@outlook.com';
 $errors = array(); // array to hold validation errors
-$data   = array(); // array to pass back data
+$data = array(); // array to pass back data
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = stripslashes(trim($_POST['name']));
     $email_addr = stripslashes(trim($_POST['email']));
@@ -37,6 +39,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
         $email->setReplyTo($email_addr, $name);
         $email->setSubject($subject);
         $email->addTo($emailTo);
+        $email->addCc($emailCc);
         $email->addContent(
             "text/html", $body
         );
@@ -44,9 +47,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
         $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
         try {
             $response = $sendgrid->send($email);
-            print $response->statusCode() . "\n";
-            print_r($response->headers());
-            print $response->body() . "\n";
             $data['success'] = true;
             $data['message'] = '<svg class="icon icon-check"><use xlink:href="#icon-check"></use></svg> Uw bericht is verzonden';
         } catch (Exception $e) {
