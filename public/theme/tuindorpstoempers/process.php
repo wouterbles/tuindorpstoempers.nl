@@ -2,7 +2,6 @@
 require '../../../vendor/autoload.php';
 // Configure your Subject Prefix and Recipient here
 $subjectPrefix = '[Contact Stoempers]';
-$emailTos = ['fjjbles@outlook.com', ];
 $emailCc = 'whbles@gmail.com';
 $emailTo = 'fjjbles@outlook.com';
 $errors = array(); // array to hold validation errors
