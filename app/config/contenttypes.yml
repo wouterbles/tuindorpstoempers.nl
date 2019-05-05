@@ -29,6 +29,7 @@ nieuws:
     singular_slug: nieuws
     fields:
         title:
+            required: true
             type: text
             class: large
         slug:
@@ -39,14 +40,16 @@ nieuws:
             upload: nieuws
             extensions: [ jpg ]
         intro:
+            required: true
             type: html
             height: 300px
         body:
+            required: true
             type: html
             height: 300px
         auteur:
+            required: true
             type: text
-    taxonomy: [ jaar ]
     listing_records: 8
     record_template: article.twig
     listing_template: news.twig
@@ -67,11 +70,11 @@ fotos:
         albumthumb:
             type: image
             upload: fotos
-            extensions: [ jpg ]
+            extensions: [ jpg, jpeg ]
         albumfotos:
             type: imagelist
             upload: fotos
-            extensions: [ jpg ]
+            extensions: [ jpg, jpeg ]
     record_template: album.twig
     listing_template: photos.twig
     default_status: publish

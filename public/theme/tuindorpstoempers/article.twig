@@ -21,7 +21,8 @@
         </div>
         {% endif %}
         <article class="article-full">
-            <h1>{{ record.title }}</h1> {{ record.intro }}
+            <h1>{{ record.title }}</h1> 
+            <h3>{{ record.intro }}</h3>
             <p class="date">{{ record.datepublish|localdate("%e")|capitalize }} {{ record.datepublish|localdate("%B %Y")|capitalize }}</p>
             {{record.body }}
             <hr>

@@ -215,8 +215,8 @@ thumbnails:
 # the allowed tags. For example, if you set `images: true`, the `<img>` tag
 # will be allowed, regardless of it being in the `allowed_tags` setting.
 htmlcleaner:
-    allowed_tags: [ div, p, br, hr, s, u, strong, em, i, b, li, ul, ol, blockquote, pre, code, tt, h1, h2, h3, h4, h5, h6, dd, dl, dh, table, tbody, thead, tfoot, th, td, tr, a, img ]
-    allowed_attributes: [ id, class, style, name, value, href, src ]
+    allowed_tags: [ p, br, hr, s, u, strong, em, i, b, li, ul, ol, blockquote, pre, code, tt, h1, h2, h3, h4, h5, h6, dd, dl, dh, table, tbody, thead, tfoot, th, td, tr, a, img ]
+    allowed_attributes: [ id, class, name, value, href, src ]
 
 # Uploaded file handling
 #
