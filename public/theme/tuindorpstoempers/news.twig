@@ -22,11 +22,12 @@
                 <a href="{{ record.link }}">
                     <h2>{{ record.title }}</h2>
                 </a>
-                <p>{{ record.excerpt(300) }}</p>
+                <p>{{ record.intro|striptags }}</p>
                 <a class="button-small" href="{{ record.link }}">Lees verder</a>
             </article>
         </div>
-        {% endfor %} {{ pager('', 8, '_pager.twig') }}
+        {% endfor %}
+        {{ pager('', 8, '_pager.twig') }}
 </div>
 
 {% include '_footer.twig' %}

@@ -68,7 +68,7 @@
             <a href="{{ record.link }}">
                 <h2>{{ record.title }}</h2>
             </a>
-            <p>{{ record.excerpt(300) }}</p>
+            <p>{{ record.intro|striptags }}</p>
             <a class="button-small" href="{{ record.link }}">Lees verder</a>
         </article>
     </div>
