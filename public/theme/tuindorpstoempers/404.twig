@@ -1,0 +1,10 @@
+{% include '_header.twig' with {'bodyclass': ''} %}
+
+<div class="header-image" style="background-image: url({{ pagina.image|image }})"></div>
+<div class="page-wrapper">
+    <section class="card-section">
+        <h2>{{ pagina.heading }}</h2> {{ pagina.body }}
+    </section>
+</div>
+
+{% include '_footer.twig' %}
