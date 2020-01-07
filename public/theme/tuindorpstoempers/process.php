@@ -20,6 +20,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($message)) {
         $errors['message'] = 'Bericht is verplicht.';
     }
+    if (preg_match('/http|www/i', $message)) {
+        $errors['message'] = 'Een url (link) in het bericht is niet toegestaan.';
+    }
     // if there are any errors in our errors array, return a success boolean or false
     if (!empty($errors)) {
         $data['success'] = false;
